@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>灵叙海报 - 创作变现</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f0f0;
+            padding: 20px;
+        }
+        
+        .poster {
+            width: 1080px;
+            height: 1920px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", sans-serif;
+        }
+        
+        /* 金币飘落效果 */
+        .coins {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .coin {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            font-weight: 700;
+            color: #b8860b;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+            animation: fall 8s linear infinite;
+        }
+        
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(2000px) rotate(720deg); opacity: 0.3; }
+        }
+        
+        /* 光晕效果 */
+        .glow {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255,215,0,0.3) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+        }
+        
+        /* 品牌区域 */
+        .brand-section {
+            position: absolute;
+            top: 80px;
+            left: 80px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        .brand-text {
+            color: white;
+        }
+        
+        .brand-name {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 4px;
+        }
+        
+        .brand-slogan {
+            font-size: 24px;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        /* 主视觉区域 */
+        .hero-section {
+            position: absolute;
+            top: 280px;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+        
+        .money-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #ffd700, #ffed4e);
+            color: #333;
+            font-size: 36px;
+            font-weight: 700;
+            padding: 20px 50px;
+            border-radius: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(255,215,0,0.4);
+        }
+        
+        .main-title {
+            color: white;
+            font-size: 120px;
+            font-weight: 900;
+            line-height: 1.2;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        
+        .main-title .highlight {
+            background: linear-gradient(90deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 140px;
+        }
+        
+        .sub-title {
+            color: white;
+            font-size: 48px;
+            margin-top: 40px;
+            font-weight: 500;
+        }
+        
+        /* 收益展示 */
+        .earnings-showcase {
+            position: absolute;
+            top: 850px;
+            left: 80px;
+            right: 80px;
+            display: flex;
+            gap: 30px;
+        }
+        
+        .earnings-card {
+            flex: 1;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 50px 30px;
+            text-align: center;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .earnings-icon {
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+        
+        .earnings-label {
+            color: rgba(255,255,255,0.9);
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .earnings-value {
+            color: white;
+            font-size: 52px;
+            font-weight: 800;
+        }
+        
+        .earnings-value .currency {
+            font-size: 36px;
+            font-weight: 600;
+        }
+        
+        /* 变现流程 */
+        .process-section {
+            position: absolute;
+            bottom: 450px;
+            left: 80px;
+            right: 80px;
+        }
+        
+        .process-title {
+            color: white;
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 600;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .step {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .step-number {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: 700;
+            color: #333;
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 30px rgba(255,215,0,0.4);
+        }
+        
+        .step-title {
+            color: white;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .step-desc {
+            color: rgba(255,255,255,0.8);
+            font-size: 24px;
+        }
+        
+        .arrow {
+            color: rgba(255,255,255,0.6);
+            font-size: 48px;
+            font-weight: 700;
+        }
+        
+        /* CTA区域 */
+        .cta-section {
+            position: absolute;
+            bottom: 150px;
+            left: 80px;
+            right: 80px;
+            text-align: center;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #ffd700, #ffed4e);
+            color: #333;
+            font-size: 48px;
+            font-weight: 700;
+            padding: 40px 100px;
+            border-radius: 80px;
+            text-decoration: none;
+            box-shadow: 0 15px 50px rgba(255,215,0,0.5);
+        }
+        
+        .cta-subtext {
+            color: white;
+            font-size: 32px;
+            margin-top: 30px;
+            opacity: 0.95;
+        }
+        
+        /* 底部信息 */
+        .footer {
+            position: absolute;
+            bottom: 50px;
+            left: 80px;
+            right: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 24px;
+        }
+        
+        .website {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <!-- 金币飘落 -->
+        <div class="coins">
+            <div class="coin" style="left: 10%; animation-delay: 0s;">¥</div>
+            <div class="coin" style="left: 25%; animation-delay: 1s;">¥</div>
+            <div class="coin" style="left: 40%; animation-delay: 2s;">¥</div>
+            <div class="coin" style="left: 55%; animation-delay: 3s;">¥</div>
+            <div class="coin" style="left: 70%; animation-delay: 4s;">¥</div>
+            <div class="coin" style="left: 85%; animation-delay: 5s;">¥</div>
+            <div class="coin" style="left: 15%; animation-delay: 6s;">¥</div>
+            <div class="coin" style="left: 60%; animation-delay: 7s;">¥</div>
+        </div>
+        
+        <!-- 光晕 -->
+        <div class="glow"></div>
+        
+        <!-- 品牌区域 -->
+        <div class="brand-section">
+            <div class="logo">◆</div>
+            <div class="brand-text">
+                <div class="brand-name">灵叙</div>
+                <div class="brand-slogan">LINGXU</div>
+            </div>
+        </div>
+        
+        <!-- 主视觉区域 -->
+        <div class="hero-section">
+            <div class="money-badge">💰 创作即收益</div>
+            <div class="main-title">
+                创作<br>
+                <span class="highlight">即变现</span>
+            </div>
+            <div class="sub-title">写小说，赚收益，快速提现</div>
+        </div>
+        
+        <!-- 收益展示 -->
+        <div class="earnings-showcase">
+            <div class="earnings-card">
+                <div class="earnings-icon">📖</div>
+                <div class="earnings-label">付费阅读</div>
+                <div class="earnings-value"><span class="currency">¥</span>0.1-1</div>
+            </div>
+            <div class="earnings-card">
+                <div class="earnings-icon">🎁</div>
+                <div class="earnings-label">读者打赏</div>
+                <div class="earnings-value"><span class="currency">¥</span>1-100</div>
+            </div>
+            <div class="earnings-card">
+                <div class="earnings-icon">📺</div>
+                <div class="earnings-label">一键动漫</div>
+                <div class="earnings-value"><span class="currency">多</span>形态</div>
+            </div>
+        </div>
+        
+        <!-- 变现流程 -->
+        <div class="process-section">
+            <div class="process-title">简单3步，开启创作变现之路</div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">AI创作</div>
+                    <div class="step-desc">输入灵感，一键生成</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">发布作品</div>
+                    <div class="step-desc">上架小说库，触达读者</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">获取收益</div>
+                    <div class="step-desc">阅读分成，快速提现</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA区域 -->
+        <div class="cta-section">
+            <div class="cta-button">开始创作变现</div>
+            <div class="cta-subtext">你的故事，值得被看见，更值得被付费</div>
+        </div>
+        
+        <!-- 底部 -->
+        <div class="footer">
+            <div>已有10000+创作者获得收益</div>
+            <div class="website">www.aixiaoshuo.tech</div>
+        </div>
+    </div>
+</body>
+</html>
