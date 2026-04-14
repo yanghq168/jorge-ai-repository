@@ -29,7 +29,6 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", sans-serif;
         }
         
-        /* 动态背景线条 */
         .speed-lines {
             position: absolute;
             width: 100%;
@@ -49,7 +48,6 @@
             100% { transform: translateX(1000px); }
         }
         
-        /* 品牌区域 */
         .brand-section {
             position: absolute;
             top: 80px;
@@ -87,7 +85,6 @@
             margin-top: 5px;
         }
         
-        /* 主视觉区域 */
         .hero-section {
             position: absolute;
             top: 250px;
@@ -97,7 +94,9 @@
         }
         
         .speed-badge {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
             background: rgba(255,255,255,0.2);
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255,255,255,0.3);
@@ -107,6 +106,12 @@
             font-size: 36px;
             font-weight: 600;
             margin-bottom: 40px;
+        }
+        
+        .badge-icon {
+            width: 40px;
+            height: 40px;
+            fill: white;
         }
         
         .main-title {
@@ -132,7 +137,6 @@
             font-weight: 600;
         }
         
-        /* 对比图区域 */
         .comparison {
             position: absolute;
             top: 900px;
@@ -198,7 +202,6 @@
             box-shadow: 0 10px 30px rgba(255,107,107,0.4);
         }
         
-        /* AI工具展示 */
         .tools-section {
             position: absolute;
             bottom: 450px;
@@ -231,8 +234,10 @@
         }
         
         .tool-icon {
-            font-size: 56px;
-            margin-bottom: 15px;
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 15px;
+            fill: white;
         }
         
         .tool-name {
@@ -241,7 +246,6 @@
             font-weight: 600;
         }
         
-        /* CTA区域 */
         .cta-section {
             position: absolute;
             bottom: 150px;
@@ -269,7 +273,6 @@
             opacity: 0.9;
         }
         
-        /* 底部信息 */
         .footer {
             position: absolute;
             bottom: 50px;
@@ -289,7 +292,6 @@
 </head>
 <body>
     <div class="poster">
-        <!-- 速度线背景 -->
         <div class="speed-lines">
             <div class="speed-line" style="top: 20%; width: 300px; animation-delay: 0s;"></div>
             <div class="speed-line" style="top: 35%; width: 400px; animation-delay: 0.5s;"></div>
@@ -298,7 +300,6 @@
             <div class="speed-line" style="top: 80%; width: 280px; animation-delay: 2s;"></div>
         </div>
         
-        <!-- 品牌区域 -->
         <div class="brand-section">
             <div class="logo">◆</div>
             <div class="brand-text">
@@ -307,9 +308,11 @@
             </div>
         </div>
         
-        <!-- 主视觉区域 -->
         <div class="hero-section">
-            <div class="speed-badge">⚡ 效率提升10倍</div>
+            <div class="speed-badge">
+                <svg class="badge-icon" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14v-8z"/></svg>
+                效率提升10倍
+            </div>
             <div class="main-title">
                 日更<br>
                 <span class="number">10000</span><br>
@@ -318,7 +321,6 @@
             <div class="sub-title">不是梦</div>
         </div>
         
-        <!-- 对比区域 -->
         <div class="comparison">
             <div class="compare-item traditional">
                 <div class="compare-label">传统写作</div>
@@ -333,42 +335,38 @@
             <div class="vs-badge">VS</div>
         </div>
         
-        <!-- AI工具展示 -->
         <div class="tools-section">
             <div class="tools-title">4大AI工具，让创作飞起来</div>
             <div class="tools-grid">
                 <div class="tool-card">
-                    <div class="tool-icon">✍️</div>
+                    <svg class="tool-icon" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25M20.71 7.04a.996.996 0 0 0 0-1.41l-2.34-2.34a.996.996 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
                     <div class="tool-name">AI续写</div>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-icon">🎭</div>
+                    <svg class="tool-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m-5-9h10v2H7z"/></svg>
                     <div class="tool-name">人物设计</div>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-icon">📋</div>
+                    <svg class="tool-icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-5 14H7v-2h7v2m3-4H7v-2h10v2m0-4H7V7h10v2z"/></svg>
                     <div class="tool-name">大纲生成</div>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-icon">✨</div>
+                    <svg class="tool-icon" viewBox="0 0 24 24"><path d="m12 17.27 3.89 2.3-.99-4.28 3.36-2.93-4.45-.39L12 8.06l-1.81 3.91-4.45.39 3.36 2.93-.99 4.28z"/></svg>
                     <div class="tool-name">情节优化</div>
                 </div>
             </div>
         </div>
         
-        <!-- CTA区域 -->
         <div class="cta-section">
             <div class="cta-button">开启高效创作</div>
             <div class="cta-subtext">从此告别卡文，写作从未如此顺畅</div>
         </div>
         
-        <!-- 底部 -->
         <div class="footer">
             <div>AI灵智 · 叙述无限</div>
             <div class="website">www.aixiaoshuo.tech</div>
         </div>
         
-        <!-- 二维码 -->
         <div style="position: absolute; bottom: 50px; right: 80px; text-align: center;">
             <div style="width: 150px; height: 150px; background: white; border-radius: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden;"><img src="qrcode.jpg" width="140" height="140" style="border-radius: 10px;"></div>
             <div style="color: white; font-size: 20px; margin-top: 10px; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">扫码立即体验</div>
