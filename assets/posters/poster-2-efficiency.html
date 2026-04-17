@@ -248,7 +248,7 @@
         
         .cta-section {
             position: absolute;
-            bottom: 50px;
+            bottom: 220px;
             left: 80px;
             right: 80px;
             text-align: center;
@@ -275,18 +275,42 @@
         
         .footer {
             position: absolute;
-            bottom: 50px;
+            bottom: 40px;
             left: 80px;
-            right: 80px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             color: rgba(255,255,255,0.8);
             font-size: 24px;
         }
         
-        .website {
-            font-weight: 600;
+        .qrcode-section {
+            position: absolute;
+            bottom: 30px;
+            right: 80px;
+            text-align: center;
+        }
+        
+        .qrcode-box {
+            width: 140px;
+            height: 140px;
+            background: white;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        .qrcode-box img {
+            width: 130px;
+            height: 130px;
+            border-radius: 8px;
+        }
+        
+        .qrcode-text {
+            color: white;
+            font-size: 18px;
+            margin-top: 8px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
     </style>
 </head>
@@ -362,14 +386,10 @@
             <div class="cta-subtext">从此告别卡文，写作从未如此顺畅</div>
         </div>
         
-        <div class="footer">
-            <div>AI灵智 · 叙述无限</div>
-            <div class="website">www.aixiaoshuo.tech</div>
-        </div>
-        
-        <div style="position: absolute; bottom: 50px; right: 80px; text-align: center;">
-            <div style="width: 150px; height: 150px; background: white; border-radius: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden;"><img src="qrcode.jpg" width="140" height="140" style="border-radius: 10px;"></div>
-            <div style="color: white; font-size: 20px; margin-top: 10px; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">扫码立即体验</div>
+
+        <div class="qrcode-section">
+            <div class="qrcode-box"><img src="https://raw.githubusercontent.com/yanghq168/jorge-ai-repository/main/assets/posters/qrcode.jpg" alt="二维码"></div>
+            <div class="qrcode-text">扫码立即体验</div>
         </div>
     </div>
 </body>
