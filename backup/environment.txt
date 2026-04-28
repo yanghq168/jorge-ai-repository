@@ -1,0 +1,9 @@
+# 备份时间: 2026-04-28T19:13:29.047768
+PATH=/root/.nvm/versions/node/v22.22.0/bin:/root/.nvm/versions/node/v22.22.0/bin:/root/.local/bin:/root/bin:/root/.local/share/pnpm:/usr/local/sbin:/usr/sbin:/usr/bin:/bin:/root/.nvm/current/bin:/root/.npm-global/bin:/root/.volta/bin:/root/.asdf/shims:/root/.bun/bin:/root/.fnm/current/bin:/usr/local/bin
+HOME=/root
+USER=root
+
+# Node版本
+NODE_VERSION=v22.22.0
+NPM_VERSION=10.9.4
+JAVA_VERSION=/bin/sh: line 1: java: command not found
