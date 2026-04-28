@@ -39,3 +39,8 @@ PATH=/root/.nvm/versions/node/v22.22.0/bin:/usr/local/sbin:/usr/local/bin:/usr/s
 
 # 故障预测 - 每天14:00检查
 0 14 * * * cd /root/.openclaw/workspace && python3 scripts/failure_prediction.py >> /var/log/prediction.log 2>&1
+
+
+
+# 月报推送 - 每月最后一天20:00
+0 20 28-31 * * [ $(date +\%d -d tomorrow) = 01 ] && cd /root/.openclaw/workspace/skills/daily-report && python3 monthly_report.py >> /var/log/monthly-report.log 2>&1

@@ -1,5 +1,5 @@
-# 备份时间: 2026-04-28T19:13:29.047768
-PATH=/root/.nvm/versions/node/v22.22.0/bin:/root/.nvm/versions/node/v22.22.0/bin:/root/.local/bin:/root/bin:/root/.local/share/pnpm:/usr/local/sbin:/usr/sbin:/usr/bin:/bin:/root/.nvm/current/bin:/root/.npm-global/bin:/root/.volta/bin:/root/.asdf/shims:/root/.bun/bin:/root/.fnm/current/bin:/usr/local/bin
+# 备份时间: 2026-04-29T03:30:02.191878
+PATH=/root/.nvm/versions/node/v22.22.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 HOME=/root
 USER=root
 
