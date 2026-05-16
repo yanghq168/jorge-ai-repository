@@ -1,4 +1,4 @@
-# 备份时间: 2026-05-16T03:30:02.011752
+# 备份时间: 2026-05-17T03:30:01.358693
 PATH=/root/.nvm/versions/node/v22.22.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 HOME=/root
 USER=root
